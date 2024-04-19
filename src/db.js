@@ -1,5 +1,7 @@
 import pg from "pg";
 const { Pool } = pg;
+import dotenv from "dotenv";
+dotenv.config();
 
 const config = {
   user: process.env.USER,
@@ -9,5 +11,4 @@ const config = {
   port: process.env.PORT,
   ssl: process.env.SSL,
 };
-
 export const pool = new Pool(config);
